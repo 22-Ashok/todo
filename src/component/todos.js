@@ -1,12 +1,10 @@
-import { useContext } from 'react'
-import { TodoContext } from "../utils/contextAPI"
 import ListOfTodos from './listOfTodos'
 
-const Todos = () => {
-      const todos = useContext(TodoContext)
+const Todos = ({ todos, removeTodo, markDone }) => {
+
     return (
         <>
-          { todos.map((e,i) => <ListOfTodos todo={e} index={i} key={i} />) }
+          { todos.map((todo,i) => <ListOfTodos key={i} todo={todo} removeTodo={removeTodo} markDone={markDone} />) }
         </>
     )
 }
